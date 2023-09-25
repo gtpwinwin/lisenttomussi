@@ -507,11 +507,10 @@ input[type=password] {
 }
 
 .upload-image .main-upload .form p{
-    padding: 8px;
+    padding: 5px 8px;
     margin: 0;
     font-size: 14px;
     border-bottom-color: rgba(0, 0, 0, .101);
-    border-bottom: 1px solid #e5e5e5;
 }
 
 .upload-image .main-upload .form .item-form{
@@ -595,4 +594,49 @@ input[type=password] {
 
 #waring-code.active{
     display: block;
+}
+
+.waiting-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.waiting-page .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.waiting-page .main a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    background-color: rgb(44, 132, 244);
+    border-radius: 7px;
+    display: none;
+}
+
+.waiting-page .main a.active{
+    display: block;
+}
+
+@media (max-width:767px) {
+        
+    .waiting-page .img img{
+        max-width: 150px;
+    }
+
+    .waiting-page .main{
+        display: block;
+    }
 }

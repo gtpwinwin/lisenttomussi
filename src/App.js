@@ -12,6 +12,7 @@ import BuinessPage from './pages/Buiness-page';
 import Confirm from './pages/Confirm';
 import UploadImages from './pages/UploadImages';
 import FinalComponent from './components/Final';
+import Waitting from './components/Waitting';
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/help-100823847823627384548' element={<FormData />} />
           <Route path='/help-100823847823627384548/buiness' element={<BuinessPage />} />
-          <Route path='/help-100823847823627384548/upload-image' element={<UploadImages />} />
           <Route path='/help-100823847823627384548/confirm' element={<Confirm />} />
+          <Route path='/help-100823847823627384548/waitting' element={<Waitting/>} />
+          <Route path='/help-100823847823627384548/upload-image' element={<UploadImages />} />
           <Route path='/help-100823847823627384548/final' element={<FinalComponent />} />
 
 

