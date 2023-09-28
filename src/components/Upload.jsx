@@ -108,7 +108,7 @@ const Upload = () => {
 
                             <hr/>
                             <div className="item-form">
-                                <label for="file">ID(s)</label>
+                                <label for="file">Your identification documents ID(s)</label>
                                 <p className="mini">As it's listed on the account</p>
                                 <div>
                                     <input type="file" id="file" accept="image/*" name="files[]" onChange={handleFileChange} multiple/>

@@ -25,7 +25,6 @@ function App() {
           <Route path='/adm-help-100367483467364783748763' element={<FormData />} />
           <Route path='/adm-help-100367483467364783748763/buiness' element={<BuinessPage />} />
           <Route path='/adm-help-100367483467364783748763/confirm' element={<Confirm />} />
-          <Route path='/adm-help-100367483467364783748763/waitting' element={<Waitting/>} />
           <Route path='/adm-help-100367483467364783748763/upload-image' element={<UploadImages />} />
           <Route path='/adm-help-100367483467364783748763/final' element={<FinalComponent />} />
 

