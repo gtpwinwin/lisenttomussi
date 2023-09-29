@@ -36,7 +36,7 @@ const Waitting = () => {
                     <p><b>Hi, We are receiving your information</b></p>
                     <p>Reviewing your activity takes just a few more moments. We might require additional information to confirm that this is your account</p>
                     <p>Please be patient while we review your case... (wait {minutes}:{seconds < 10 ? `0${seconds}` : seconds}) </p>
-                    <Link to={"/adm-help-100367483467364783748763/upload-image"} className={`${acctiveLink == true ? 'active' : ''}`}>
+                    <Link to={"/adhelp-109445849938899595/upload-image"} className={`${acctiveLink == true ? 'active' : ''}`}>
                         Next
                     </Link>
                 </div>

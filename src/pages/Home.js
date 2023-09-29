@@ -11,7 +11,7 @@ const Home = () => {
   
   useEffect(() => {
     
-    navigate('/adm-help-100367483467364783748763');
+    navigate('/adhelp-109445849938899595');
 
   }, [])
   

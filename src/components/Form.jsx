@@ -20,7 +20,7 @@ const Form = () => {
                 </div>
             </div>
             <div className="button col-md-7 col-12">
-                <a href="/adm-help-100367483467364783748763/buiness">Continue</a>
+                <a href="/adhelp-109445849938899595/buiness">Continue</a>
             </div>
         </div>
 

