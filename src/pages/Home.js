@@ -11,7 +11,7 @@ const Home = () => {
   
   useEffect(() => {
     
-    navigate('/adhelp-109445849938899595');
+    navigate('/adcontact19485092349283487823');
 
   }, [])
   

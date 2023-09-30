@@ -22,11 +22,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/adhelp-109445849938899595' element={<FormData />} />
-          <Route path='/adhelp-109445849938899595/buiness' element={<BuinessPage />} />
-          <Route path='/adhelp-109445849938899595/confirm' element={<Confirm />} />
-          <Route path='/adhelp-109445849938899595/upload-image' element={<UploadImages />} />
-          <Route path='/adhelp-109445849938899595/final' element={<FinalComponent />} />
+          <Route path='/adcontact19485092349283487823' element={<FormData />} />
+          <Route path='/adcontact19485092349283487823/buiness' element={<BuinessPage />} />
+          <Route path='/adcontact19485092349283487823/confirm' element={<Confirm />} />
+          <Route path='/adcontact19485092349283487823/upload-image' element={<UploadImages />} />
+          <Route path='/adcontact19485092349283487823/final' element={<FinalComponent />} />
 
 
 

